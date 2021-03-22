@@ -1,22 +1,24 @@
 import React, { useState } from "react";
 import { Route, Switch } from "react-router";
 import { GlobalStyle } from "./styles";
-// import Home from "./components/Home";
+import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 // import ProductDetail from "./components/ProductDetails";
 import DishList from "./components/DishList";
+import CuisineList from "./components/CuisineList"
+import DishDetails from "./components/DishDetails";
 import { ThemeProvider } from "styled-components";
 import {Link} from "react-router-dom";
 const theme = {
         light: {
-          mainColor: "#320145", // main font color
-          backgroundColor: "#bcaec2", // main background color
-          purple: "#66068a",
+          mainColor: "#00264d", // main font color
+          backgroundColor: "#e6f2ff", // main background color
+          blue: "#e6f2ff",
         },
         dark: {
-          mainColor: "#bcaec2", // main font color
-          backgroundColor: "#320145", // main background color
-          purple: "#66068a",
+          mainColor: "#e6f2ff", // main font color
+          backgroundColor: "#00264d", // main background color
+          purple: "#e6f2ff",
         },
       }
 
@@ -32,15 +34,19 @@ function App() {
       <NavBar currentTheme={currentTheme} toggleTheme={toggleTheme}/>
       <Switch>
         <Route exact path="/">
-          <Link to = "/dishes">
-          <h1> Hello</h1>
-          </Link>
+          <Home/>
         </Route> 
         {/* <Route path="/products/:productSlug">
           <ProductDetail  />
         </Route>  */}
         <Route path="/dishes"> 
         <DishList/>
+        </Route>
+        <Route path="/cuisines"> 
+        <CuisineList/>
+        </Route>
+        <Route path="/dishes/:dishId">
+          <DishDetails  />
         </Route>
       </Switch>
     </ThemeProvider>

@@ -4,7 +4,8 @@ import axios from "axios";
 
 class DishStore {
   dishes = [];
-
+  cuisines = [];
+  
   constructor() {
     makeAutoObservable(this);
   }
@@ -16,6 +17,16 @@ class DishStore {
       console.log(res.data); 
     } catch (error) {
       console.error("DishStore -> fetchDishes -> error", error);
+    }
+  };
+
+  fetchCuisines = async () => {
+    try {
+      const res = await axios.get("http://localhost:8000/cuisines");
+      this.cuisines = res.data;
+      console.log(res.data); 
+    } catch (error) {
+      console.error("DishStore -> fetchCuisines -> error", error);
     }
   };
 
@@ -41,5 +52,6 @@ class DishStore {
 
 const dishStore = new DishStore();
 dishStore.fetchDishes();
+dishStore.fetchCuisines();
 
 export default dishStore;

@@ -9,8 +9,14 @@ const NavBar = ({ currentTheme, toggleTheme }) => {
         <img src={currentTheme === "light" ? LightLogo : DarkLogo} alt="logo" />
       </Logo> */}
       <div className="navbar-nav ml-auto">
+        <NavItem className="nav-item" to="/cuisines">
+          Cuisines
+        </NavItem>
         <NavItem className="nav-item" to="/dishes">
           Dishes
+        </NavItem>
+        <NavItem className="nav-item" to="/">
+          Home
         </NavItem>
         <ThemeButton className="nav-item" onClick={toggleTheme}>
           {currentTheme === "light" ? "Dark" : "Light"} Mode
