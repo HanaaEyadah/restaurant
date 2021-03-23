@@ -63,8 +63,23 @@ const DishModal = ({ isOpen, closeModal, createDish }) => {
             onChange={handleChange}
           />
         </div>
+        <div className="form-group">
+          <label>Image URL</label>
+          <input
+            type="text"
+            className="form-control"
+            name="img"
+            onChange={handleChange}
+          />
+        </div>
         <div className="col-6">
-          <label>cuisineId</label>
+            <p>Enter cuisine id below:<br/>
+            1: Italian <br/>
+            2: American <br/>
+            3: Lebanese <br/>
+            4: Indian 
+            </p>
+          <label>Cuisine</label>
           <input
             name="cuisineId"
             type="number"
@@ -73,6 +88,17 @@ const DishModal = ({ isOpen, closeModal, createDish }) => {
             onChange={handleChange}
           />
         </div>
+
+        {/* <div className="col-6">
+        <label for="cuisines">Choose a cuisine</label>
+  <select name="cuisineId" onChange={handleChange}  type="number" className="form-control" id = "cuisines">
+    <option value="1">Italian</option>
+    <option value="2">American</option>
+    <option value="3">Lebanese</option>
+    <option value="4">Indian</option>
+  </select> */}
+
+        {/* </div> */}
         {/* <div className="form-group">
     <label>Image</label>
     <input type="text" className="form-control" />

@@ -9,8 +9,8 @@ const CuisineItem = ({ cuisine }) => {
       {/* <Link to={`/cuisines/${cuisine.id}`}> */}
       <img alt={cuisine.name} src={cuisine.img} />
       {/* </Link> */}
-      <p>{cuisine.name}</p>
-      <p>{cuisine.description}</p>
+      <p><b>{cuisine.name}</b></p>
+     
       <h1>
         {console.log(`cuisine id ${cuisine.id}, image URL ${cuisine.img}`)}
       </h1>

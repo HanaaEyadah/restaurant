@@ -7,12 +7,11 @@ const DishItem = ({ dish }) => {
   return (
     <DishWrapper>
         <img alt={dish.name} src={dish.img} />
-      <p>{dish.name}</p>
+      <p><b>{dish.name}</b></p>
+      <p>{dish.description}</p>
       <p className="product-price">{dish.price} KD</p>
       <DeleteButton dishId={dish.id} />
-      <h1>
-        {console.log(`dish ID: ${dish.id}, cuisine name: ${dish.cuisine.name}`)}
-      </h1>
+     
     </DishWrapper>
   );
 };
