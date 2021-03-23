@@ -14,7 +14,7 @@ const theme = {
   light: {
     mainColor: "#00264d", // main font color
     backgroundColor: "#e6f2ff", // main background color
-    blue: "#e6f2ff",
+    blue: "#00264d",
   },
   dark: {
     mainColor: "#e6f2ff", // main font color

@@ -4,8 +4,8 @@ import styled, { createGlobalStyle } from "styled-components";
 export const DishWrapper = styled.div`
   margin: 20px;
   img {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
   }
   p {
     text-align: center;

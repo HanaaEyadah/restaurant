@@ -1,14 +1,13 @@
 import { DishWrapper, CuisineImage } from "../styles";
 import { observer } from "mobx-react";
 import ViewDishes from "../Buttons/ViewDishes";
-import cuisines from "../cuisines";
-import { Link } from "react-router-dom";
+
 
 const CuisineItem = ({ cuisine }) => {
   return (
     <DishWrapper>
       {/* <Link to={`/cuisines/${cuisine.id}`}> */}
-      <CuisineImage alt={cuisine.name} src={cuisine.img} />
+      <img alt={cuisine.name} src={cuisine.img} />
       {/* </Link> */}
       <p>{cuisine.name}</p>
       <p>{cuisine.description}</p>
