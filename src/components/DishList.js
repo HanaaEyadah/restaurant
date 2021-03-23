@@ -8,7 +8,7 @@ import AddButton from "../Buttons/AddButton";
 
 const DishList = () => {
   const [query, setQuery] = useState("");
-  const [cuisineId, setCuisineId] = useState(1);
+//   const [cuisineId, setCuisineId] = useState(1);
   const dishList = dishStore.dishes
     .filter((dish) =>
       dish.name.toLowerCase().includes(query.toLowerCase())

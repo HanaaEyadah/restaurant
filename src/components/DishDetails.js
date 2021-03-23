@@ -13,7 +13,7 @@ const DishDetails = () => {
   return (
     <DetailWrapper>
       <Link to="/dishes">Back to Dishes</Link>
-       <Link to={`/dishes/${dish.id}`}> {dish.name}</Link>
+       {/* <Link to={`/dishes/${dishId}`}> {dish.name}</Link> */}
       <h1>{dish.name}</h1>
       {/* <img src={dish.image} alt={dish.name} /> */}
       <p>{dish.description}</p>

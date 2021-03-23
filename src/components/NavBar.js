@@ -12,7 +12,7 @@ const NavBar = ({ currentTheme, toggleTheme }) => {
         <NavItem className="nav-item" to="/cuisines">
           Cuisines
         </NavItem>
-        <NavItem className="nav-item" to="/dishes">
+        <NavItem className="nav-item" to="/dishes/">
           Dishes
         </NavItem>
         <NavItem className="nav-item" to="/">

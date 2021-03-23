@@ -43,11 +43,22 @@ export const SearchBarStyled = styled.input`
 
 export const ShopImage = styled.img`
   display: block;
-  height:300px;
+  height:400px;
   margin-left: auto;
   margin-right: auto;
-  width: 600px;
+  width: 950px;
   margin-bottom: 200px;
+`;
+
+export const CuisineImage = styled.img`
+  width: 350px;
+  height: 200px;
+  padding-bottom: 4cm;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  block-size: auto;
 `;
 
 export const NavStyled = styled.nav`

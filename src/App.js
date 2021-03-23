@@ -9,6 +9,7 @@ import CuisineList from "./components/CuisineList"
 import DishDetails from "./components/DishDetails";
 import { ThemeProvider } from "styled-components";
 import {Link} from "react-router-dom";
+import CuisineItem from "./components/CuisineItem";
 const theme = {
         light: {
           mainColor: "#00264d", // main font color
@@ -36,18 +37,18 @@ function App() {
         <Route exact path="/">
           <Home/>
         </Route> 
-        {/* <Route path="/products/:productSlug">
-          <ProductDetail  />
-        </Route>  */}
-        <Route path="/dishes"> 
+        <Route path="/cuisines/:cuisineSlug">
+          <CuisineItem  />
+        </Route> 
+        <Route path="/dishes/"> 
         <DishList/>
         </Route>
         <Route path="/cuisines"> 
         <CuisineList/>
         </Route>
-        <Route path="/dishes/:dishId">
+        {/* <Route path="/dishes:dishId">
           <DishDetails  />
-        </Route>
+        </Route> */}
       </Switch>
     </ThemeProvider>
   ); 

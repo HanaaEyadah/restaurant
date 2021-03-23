@@ -2,6 +2,17 @@
   text-align: center;
 }
 
+.img {
+  width: 350px;
+  height: 200px;
+  padding-bottom: 4cm;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  block-size: auto;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
