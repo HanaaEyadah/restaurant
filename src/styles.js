@@ -37,13 +37,13 @@ export const SearchBarStyled = styled.input`
   margin: 1rem auto;
   display: block;
   width: 40%;
-  background-color:#bcaec2;
-  border-color:#320145;
+  background-color: #bcaec2;
+  border-color: #320145;
 `;
 
 export const ShopImage = styled.img`
   display: block;
-  height:400px;
+  height: 400px;
   margin-left: auto;
   margin-right: auto;
   width: 950px;
@@ -51,7 +51,7 @@ export const ShopImage = styled.img`
 `;
 
 export const CuisineImage = styled.img`
-  width: 350px;
+  width: 500px;
   height: 200px;
   padding-bottom: 4cm;
   border-radius: 10px;
@@ -76,9 +76,7 @@ export const ThemeButton = styled.button`
 
 export const Title = styled.h1`
   text-align: center;
- 
- `;
-
+`;
 
 export const DeleteButtonStyled = styled.p`
   font-size: 1em;
@@ -87,9 +85,7 @@ export const DeleteButtonStyled = styled.p`
   border-radius: 3px;
   background-color: ${(props) => props.theme.mainColor};
   color: ${(props) => props.theme.backgroundColor};
-  
 `;
-
 
 export const DetailWrapper = styled.div`
   display: block;
@@ -120,10 +116,8 @@ export const NavItem = styled(NavLink)`
   }
 `;
 
-
-
 export const CreateButtonStyled = styled.button`
-font-size: 1em;
+  font-size: 1em;
   margin: 1.25em;
   padding: 0.25em 1em;
   border-radius: 3px;

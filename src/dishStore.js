@@ -5,7 +5,8 @@ import axios from "axios";
 class DishStore {
   dishes = [];
   cuisines = [];
-  
+  loading = true;
+
   constructor() {
     makeAutoObservable(this);
   }
@@ -14,7 +15,8 @@ class DishStore {
     try {
       const res = await axios.get("http://localhost:8000/dishes");
       this.dishes = res.data;
-      console.log(res.data); 
+      this.loading = false;
+      console.log(res.data);
     } catch (error) {
       console.error("DishStore -> fetchDishes -> error", error);
     }
@@ -24,7 +26,7 @@ class DishStore {
     try {
       const res = await axios.get("http://localhost:8000/cuisines");
       this.cuisines = res.data;
-      console.log(res.data); 
+      console.log(res.data);
     } catch (error) {
       console.error("DishStore -> fetchCuisines -> error", error);
     }
@@ -35,7 +37,7 @@ class DishStore {
       const res = await axios.post("http://localhost:8000/dishes", newDish);
       this.dishes.push(res.data);
       console.log("DishStore -> createDish -> this.dishes", this.dishes);
-    }catch (error) {
+    } catch (error) {
       console.error("DishStore -> createDish -> error", error);
     }
   };
@@ -44,7 +46,7 @@ class DishStore {
     try {
       await axios.delete(`http://localhost:8000/dishes/${dishId}`);
       this.dishes = this.dishes.filter((dish) => dish.id !== dishId);
-    }catch (error) {
+    } catch (error) {
       console.error("DishStore -> deleteDish -> error", error);
     }
   };

@@ -5,23 +5,23 @@ import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 // import ProductDetail from "./components/ProductDetails";
 import DishList from "./components/DishList";
-import CuisineList from "./components/CuisineList"
+import CuisineList from "./components/CuisineList";
 import DishDetails from "./components/DishDetails";
 import { ThemeProvider } from "styled-components";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import CuisineItem from "./components/CuisineItem";
 const theme = {
-        light: {
-          mainColor: "#00264d", // main font color
-          backgroundColor: "#e6f2ff", // main background color
-          blue: "#e6f2ff",
-        },
-        dark: {
-          mainColor: "#e6f2ff", // main font color
-          backgroundColor: "#00264d", // main background color
-          purple: "#e6f2ff",
-        },
-      }
+  light: {
+    mainColor: "#00264d", // main font color
+    backgroundColor: "#e6f2ff", // main background color
+    blue: "#e6f2ff",
+  },
+  dark: {
+    mainColor: "#e6f2ff", // main font color
+    backgroundColor: "#00264d", // main background color
+    purple: "#e6f2ff",
+  },
+};
 
 function App() {
   const [currentTheme, setCurrentTheme] = useState("light");
@@ -32,36 +32,29 @@ function App() {
   return (
     <ThemeProvider theme={theme[currentTheme]}>
       <GlobalStyle />
-      <NavBar currentTheme={currentTheme} toggleTheme={toggleTheme}/>
+      <NavBar currentTheme={currentTheme} toggleTheme={toggleTheme} />
       <Switch>
         <Route exact path="/">
-          <Home/>
-        </Route> 
-        <Route path="/cuisines/:cuisineSlug">
-          <CuisineItem  />
-        </Route> 
-        <Route path="/dishes/"> 
-        <DishList/>
+          <Home />
         </Route>
-        <Route path="/cuisines"> 
-        <CuisineList/>
+        {/* <Route path="/cuisines/:cuisineSlug">
+          <CuisineItem  />
+        </Route>  */}
+        {/* <Route path="/dishes/:cuisineId?">
+          <DishList />
+        </Route> */}
+        <Route path={["/dishes", "/cuisines/:cuisineId"]}>
+          <DishList />
+        </Route>
+        <Route path="/cuisines">
+          <CuisineList />
         </Route>
         {/* <Route path="/dishes:dishId">
           <DishDetails  />
         </Route> */}
       </Switch>
     </ThemeProvider>
-  ); 
+  );
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-

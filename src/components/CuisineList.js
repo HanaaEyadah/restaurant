@@ -3,36 +3,25 @@ import CuisineItem from "./CuisineItem";
 import DishItem from "./DishItem";
 // import SearchBar from "./SearchBar";
 import { useState } from "react";
-import dishStore from "../dishStore"
+import dishStore from "../dishStore";
 import { observer } from "mobx-react";
-import cuisines from "../cuisines";
-
+// import cuisines from "../cuisines";
 
 const CuisineList = () => {
   const [query, setQuery] = useState("");
-  const cuisineList = cuisines
+  //TODO: add loading
+  const cuisineList = dishStore.cuisines
     .filter((cuisine) =>
       cuisine.name.toLowerCase().includes(query.toLowerCase())
     )
-    .map((cuisine) => (
-      <CuisineItem
-        cuisine={cuisine}
-        id={cuisine.id}
-      />
-    ));
-    const dishList = dishStore.dishes
-    .filter((dish) =>
-      dish.name.toLowerCase().includes(query.toLowerCase())
-    )
+    // .map((cuisine) => <CuisineItem cuisine={cuisine} id={cuisine.id} />);
+    .map((cuisine) => <CuisineItem cuisine={cuisine} />);
+  const dishList = dishStore.dishes
+    .filter((dish) => dish.name.toLowerCase().includes(query.toLowerCase()))
     // const dishList = dishStore.dishes
     // .filter((dish) =>
     // dish.cuisineId === cuisineId )
-    .map((dish) => (
-      <DishItem
-        dish={dish}
-        id={dish.id}
-      />
-    ));
+    .map((dish) => <DishItem dish={dish} id={dish.id} />);
 
   return (
     <div>

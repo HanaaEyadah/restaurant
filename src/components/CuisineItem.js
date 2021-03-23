@@ -1,25 +1,24 @@
-import { DishWrapper, CuisineImage} from "../styles";
+import { DishWrapper, CuisineImage } from "../styles";
 import { observer } from "mobx-react";
 import ViewDishes from "../Buttons/ViewDishes";
 import cuisines from "../cuisines";
 import { Link } from "react-router-dom";
 
-const CuisineItem = ({cuisine} ) => {
+const CuisineItem = ({ cuisine }) => {
   return (
     <DishWrapper>
-        <Link to={`/cuisines/${cuisine.id}`}>
-        <CuisineImage alt={cuisine.name} src={cuisine.image} />
-      </Link>
+      {/* <Link to={`/cuisines/${cuisine.id}`}> */}
+      <CuisineImage alt={cuisine.name} src={cuisine.img} />
+      {/* </Link> */}
       <p>{cuisine.name}</p>
       <p>{cuisine.description}</p>
-     <h1>{console.log(cuisine.id)}</h1>
-     <ViewDishes cuisineId={cuisine.id}/>
+      <h1>
+        {console.log(`cuisine id ${cuisine.id}, image URL ${cuisine.img}`)}
+      </h1>
+      {/* <img src={cuisine.img} /> */}
+      <ViewDishes cuisineId={cuisine.id} onClick />
     </DishWrapper>
   );
 };
 
 export default observer(CuisineItem);
-
-
-
-
