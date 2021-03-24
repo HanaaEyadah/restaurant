@@ -35,6 +35,7 @@ class DishStore {
   createDish = async (newDish) => {
     try {
       const res = await axios.post("http://localhost:8000/dishes", newDish);
+      res.data.cuisine = { id: newDish.cuisineId };
       this.dishes.push(res.data);
       console.log("DishStore -> createDish -> this.dishes", this.dishes);
     } catch (error) {

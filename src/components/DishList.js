@@ -10,24 +10,21 @@ import PacmanLoader from "react-spinners/PacmanLoader";
 
 const DishList = () => {
   const [query, setQuery] = useState("");
-  // const [cuisineId, setCuisineId] = useState(2);
-  const [cuisineName, setCuisineName] = useState("");
   const { cuisineId } = useParams();
-  if (dishStore.loading) return <PacmanLoader color={"blue"} size={150} />;
+  if (dishStore.loading)
+    return (
+      <PacmanLoader
+        color={"grey"}
+        size={75}
+        css={{ width: "260px !important", height: "130px !important" }}
+      />
+    );
 
   const dishList = dishStore.dishes
-    // .filter((dish) => dish.name.toLowerCase().includes(query.toLowerCase()))
-    // // const dishList = dishStore.dishes
-    // // .filter((dish) =>
-    // // dish.cuisineId === cuisineId )
-    // .map((dish) => <DishItem dish={dish} id={dish.id} />);
-
     .filter(
       (dish) =>
         // dish.name.toLowerCase().includes(query.toLowerCase()) ||
         dish.cuisine.id === +cuisineId || !cuisineId
-
-      // || dish.cuisine.name.toLowerCase().includes(cuisineName.toLowerCase())
     )
     .map((dish) => <DishItem dish={dish} />);
   return (

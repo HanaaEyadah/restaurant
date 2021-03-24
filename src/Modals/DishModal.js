@@ -4,14 +4,12 @@ import dishStore from "../dishStore";
 import { useState } from "react";
 import { CreateButtonStyled } from "../styles";
 
-//HTML SELECT.
-
 const DishModal = ({ isOpen, closeModal, createDish }) => {
   const [dish, setDish] = useState({
     name: "",
     price: 0,
     description: "",
-    cuisineId: 0,
+    cuisineId: 1,
     // image: "",
   });
   const handleChange = (event) => {
@@ -73,41 +71,25 @@ const DishModal = ({ isOpen, closeModal, createDish }) => {
           />
         </div>
         <div className="col-6">
-            <p>Enter cuisine id below:<br/>
-            1: Italian <br/>
-            2: American <br/>
-            3: Lebanese <br/>
-            4: Indian 
-            </p>
-          <label>Cuisine</label>
-          <input
+          <label for="cuisines">Select a cuisine</label>
+          <select
             name="cuisineId"
-            type="number"
-            min="1"
-            className="form-control"
             onChange={handleChange}
-          />
+            className="form-control"
+            id="cuisines"
+          >
+            <option value="1">Italian</option>
+            <option value="2">American</option>
+            <option value="3">Lebanese</option>
+            <option value="4">Indian</option>
+          </select>
         </div>
-
-        {/* <div className="col-6">
-        <label for="cuisines">Choose a cuisine</label>
-  <select name="cuisineId" onChange={handleChange}  type="number" className="form-control" id = "cuisines">
-    <option value="1">Italian</option>
-    <option value="2">American</option>
-    <option value="3">Lebanese</option>
-    <option value="4">Indian</option>
-  </select> */}
-
-        {/* </div> */}
-        {/* <div className="form-group">
-    <label>Image</label>
-    <input type="text" className="form-control" />
-  </div> */}
         <CreateButtonStyled className="btn float-right">
           Create
         </CreateButtonStyled>
       </form>
     </Modal>
+    //check react modal
   );
 };
 

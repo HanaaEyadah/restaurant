@@ -6,12 +6,13 @@ import { observer } from "mobx-react";
 const DishItem = ({ dish }) => {
   return (
     <DishWrapper>
-        <img alt={dish.name} src={dish.img} />
-      <p><b>{dish.name}</b></p>
+      <img alt={dish.name} src={dish.img} />
+      <p>
+        <b>{dish.name}</b>
+      </p>
       <p>{dish.description}</p>
       <p className="product-price">{dish.price} KD</p>
       <DeleteButton dishId={dish.id} />
-     
     </DishWrapper>
   );
 };

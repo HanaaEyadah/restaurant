@@ -37,21 +37,18 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        {/* <Route path="/cuisines/:cuisineSlug">
-          <CuisineItem  />
-        </Route>  */}
-        {/* <Route path="/dishes/:cuisineId?">
-          <DishList />
-        </Route> */}
         <Route path={["/dishes", "/cuisines/:cuisineId"]}>
           <DishList />
         </Route>
         <Route path="/cuisines">
           <CuisineList />
         </Route>
-        {/* <Route path="/dishes:dishId">
+        {/* <Route path="/dishes/:dishId">
           <DishDetails  />
         </Route> */}
+        {/* <Route path="/cuisines/:cuisineSlug">
+          <CuisineItem  />
+        </Route>  */}
       </Switch>
     </ThemeProvider>
   );
