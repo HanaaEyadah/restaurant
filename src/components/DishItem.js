@@ -3,8 +3,10 @@ import DeleteButton from "../Buttons/DeleteButton";
 import { DishWrapper } from "../styles";
 import { observer } from "mobx-react";
 
+
 const DishItem = ({ dish }) => {
   return (
+    
     <DishWrapper>
       <img alt={dish.name} src={dish.img} />
       <p>

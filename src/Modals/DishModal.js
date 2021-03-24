@@ -76,7 +76,7 @@ const DishModal = ({ isOpen, closeModal, createDish }) => {
             name="cuisineId"
             onChange={handleChange}
             className="form-control"
-            id="cuisines"
+            id="cuisines.id"
           >
             <option value="1">Italian</option>
             <option value="2">American</option>

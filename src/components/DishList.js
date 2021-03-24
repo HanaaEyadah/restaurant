@@ -29,9 +29,8 @@ const DishList = () => {
     .map((dish) => <DishItem dish={dish} />);
   return (
     <div>
-      {/* <SearchBar setQuery={setQuery} /> */}
+    <AddButton />
       <ListWrapper>{dishList}</ListWrapper>
-      <AddButton />
     </div>
   );
 };
