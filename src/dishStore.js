@@ -6,6 +6,7 @@ class DishStore {
   dishes = [];
   cuisines = [];
   loading = true;
+  loadingCuisines = true;
 
   constructor() {
     makeAutoObservable(this);
@@ -26,6 +27,7 @@ class DishStore {
     try {
       const res = await axios.get("http://localhost:8000/cuisines");
       this.cuisines = res.data;
+      this.loadingCuisines = false;
       console.log(res.data);
     } catch (error) {
       console.error("DishStore -> fetchCuisines -> error", error);
